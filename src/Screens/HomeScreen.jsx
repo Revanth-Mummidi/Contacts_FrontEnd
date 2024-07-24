@@ -232,12 +232,13 @@ function HomeScreen() {
     try {
       const URL = process.env.REACT_APP_BASE_URL+"/api/contacts";
       const token = localStorage.getItem("accessToken");
+      console.log("TOKEN=",token);
       const response = await axios.get(URL, {
         headers: {
           Authorization: "Bearer " + token,
         },
       });
-      console.log(response);
+      console.log("RES",response);
       setData(response.data);
     } catch (err) {
       console.log(err);
