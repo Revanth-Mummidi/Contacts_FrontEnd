@@ -230,7 +230,7 @@ function HomeScreen() {
   };
   const fetchContacts = async () => {
     try {
-      const URL = "/api/contacts";
+      const URL = process.env.REACT_APP_BASE_URL+"/api/contacts";
       const token = localStorage.getItem("accessToken");
       const response = await axios.get(URL, {
         headers: {
@@ -337,7 +337,7 @@ function ViewComponents({ Data, setEdit, setItem,setView ,fetchContacts}) {
   const handleDelete=async(item)=>{
     try{
       console.log("DELETE",item);
-      const URL="/api/contacts/"+`${item._id}`;
+      const URL=process.env.REACT_APP_BASE_URL+"/api/contacts/"+`${item._id}`;
       
       const token = localStorage.getItem("accessToken");
       const response=await axios.delete(URL,{
@@ -403,7 +403,7 @@ function AddComponent({ setAdd, isEdit, setEdit, contact,setView,view }) {
   const [name, setName] = useState((isEdit || view ) ? contact.name : "");
   const handleCreate=async()=>{
     try{
-      const URL="/api/contacts";
+      const URL=process.env.REACT_APP_BASE_URL+"/api/contacts";
       const body={
         email,
         name,
@@ -425,7 +425,7 @@ function AddComponent({ setAdd, isEdit, setEdit, contact,setView,view }) {
   }
   const handleEdit=async()=>{
     try{
-      const URL="/api/contacts/"+`${contact._id}`;
+      const URL=process.env.REACT_APP_BASE_URL+"/api/contacts/"+`${contact._id}`;
       const body={
         email,
         name,

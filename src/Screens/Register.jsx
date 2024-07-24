@@ -11,7 +11,7 @@ function Register() {
   const handleRegister=async()=>{
     
     try{
-      const MAIN_URL="/api/users/register";
+      const MAIN_URL=process.env.REACT_APP_BASE_URL+"/api/users/register";
       const body = {
         username:name,
         email,
