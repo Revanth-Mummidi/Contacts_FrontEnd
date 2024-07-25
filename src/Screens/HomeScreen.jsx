@@ -232,16 +232,22 @@ function HomeScreen() {
     try {
       const URL = process.env.REACT_APP_BASE_URL+"/api/contacts";
       const token = localStorage.getItem("accessToken");
-      console.log("TOKEN=",token);
+      console.log("TOKENS=",token);
       const response = await axios.get(URL, {
         headers: {
           Authorization: "Bearer " + token,
         },
       });
       console.log("RES",response);
+      if(response.status==401)
+      {
+          navigation("/login");
+      }
+      else 
       setData(response.data);
     } catch (err) {
-      console.log(err);
+      navigation("/login");
+      console.log("ERROR IN FETCHING",err);
     }
   };
   useEffect(()=>{
