@@ -378,7 +378,7 @@ function ViewComponents({ Data, setEdit, setItem,setView ,fetchContacts}) {
                 <p className="font-semibold truncate ... text-xl text-clip text-start w-full ml-2 text-white">
                   {item?.name}
                 </p>
-                <div className="flex  w-full flex-row gap-4">
+                <div className="flex  flex-row gap-4">
                 <GrView  onClick={()=>{
                   setItem(item);
                   setView(true)
