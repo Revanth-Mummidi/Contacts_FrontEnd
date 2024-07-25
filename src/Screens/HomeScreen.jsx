@@ -376,7 +376,7 @@ function ViewComponents({ Data, setEdit, setItem,setView ,fetchContacts}) {
               >
                 <CgProfile size={30} className="flex-none text-gray-200" />
                 <p className="font-semibold text-xl text-start w-full ml-2 text-white">
-                  {item?.name}
+                  {item?.name.length>=5?item?.name.slice(0,3)+"..":item?.name}
                 </p>
                 <div className="flex flex-row gap-4">
                 <GrView  onClick={()=>{
