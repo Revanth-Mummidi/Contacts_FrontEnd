@@ -375,8 +375,8 @@ function ViewComponents({ Data, setEdit, setItem,setView ,fetchContacts}) {
                 className="w-full  cursor-pointer hover:opacity-85 shadow-lg shadow-black min-w-[200px] h-[50px]  flex items-center justify-between  my-1 p-2 bg-slate-800 bg-opacity-90  rounded-md"
               >
                 <CgProfile size={30} className="flex-none text-gray-200" />
-                <p className="font-semibold text-xl text-start w-full ml-2 text-white">
-                  {item?.name.length>=5?item?.name.slice(0,3)+"..":item?.name}
+                <p className="font-semibold truncate ... text-xl text-clip text-start w-full ml-2 text-white">
+                  {item?.name}
                 </p>
                 <div className="flex flex-row gap-4">
                 <GrView  onClick={()=>{
